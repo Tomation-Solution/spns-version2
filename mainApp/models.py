@@ -50,6 +50,6 @@ class Contact(models.Model):
     message_type = models.CharField(max_length=50)
     message = models.TextField()
     phone = models.CharField(max_length=100,default="")
-
+    location = models.TextField(default="..")
     def __str__(self):
         return f'{self.name} sent a message'

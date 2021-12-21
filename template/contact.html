@@ -18,31 +18,43 @@
             </h2>
             <p class="section-title__description">When, while lovely valley teems with vapour around meand <br class="d-none d-xs-block"/> meridian the upper impenetrable.</p>
           </div>
-          <form action="" class="contact-form" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300" data-aos-once="true">
+          <form action="{% url 'contact' %}" method="post" class="contact-form" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300" data-aos-once="true">
             <div class="row">
+              {% csrf_token %}
               <div class="col-lg-6 mb-4">
                 <div class="form-floating">
-                  <input class="form-control" placeholder="Leave a comment here" id="floatinginput" />
+                  <input name="email" class="form-control" placeholder="Leave a comment here" id="floatinginput" required />
                   <label for="floatinginput">Your Email</label>
                 </div>
               </div>
               <div class="col-lg-6 mb-4">
                 <div class="form-floating">
-                  <input class="form-control" placeholder="Leave a comment here" id="floatinginput2" />
+                  <input name="phone" class="form-control" placeholder="Leave a comment here" id="floatinginput2" required />
                   <label for="floatinginput2">Phone number</label>
                 </div>
               </div>
 
               <div class="col-lg-6 mb-4">
                 <div class="form-floating">
-                  <input class="form-control" placeholder="Leave a comment here" id="floatinginput2" />
+                  <input name="name" class="form-control" placeholder="Leave a comment here" id="floatinginput2" />
                   <label for="floatinginput2">Name</label>
                 </div>
               </div>
 
+
+
               <div class="col-lg-6 mb-4">
                 <div class="form-floating">
-                  <select name="" id="">
+                  <input name="location" class="form-control" placeholder="Leave a comment here" id="floatinginput3"  required/>
+                  <label for="floatinginput3">Location</label>
+                </div>
+              </div>
+
+
+
+              <div class="col-lg-12 mb-4">
+                <div class="form-floating">
+                  <select name="messageType" id="" required>
                     <option value="Book a demo" selected>Book a demo</option>
                     <option value="Inquiry">Inquiry</option>
                   </select>
@@ -50,9 +62,14 @@
                   <!-- <label for="floatinginput2">Phone number</label> -->
                 </div>
               </div>
+
+
+
+              
+
               <div class="col-lg-12">
                 <div class="form-floating">
-                  <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea3" style="height: 100px"></textarea>
+                  <textarea name="message" class="form-control" placeholder="Leave a comment here" id="floatingTextarea3" style="height: 100px" required></textarea>
                   <label for="floatingTextarea3">Your Message Here </label>
                 </div>
               </div>

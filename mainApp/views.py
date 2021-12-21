@@ -110,6 +110,42 @@ def solutionList(request):
 
 
 def contact(request,pk=None):
+
+    name = ''
+    email = ''
+    message = ''
+    messageType = ''
+    phone =''
+    location=''
+
+    if request.method == 'POST':
+
+        print(request.POST)
+        name = request.POST['name']
+        email = request.POST['email']
+        message = request.POST['message']
+        messageType = request.POST['messageType']  
+       
+        location       = request.POST['location'] 
+        phone =request.POST['phone']         
+ 
+        # print(
+        #     name,"name\n",
+        #     email,"email\n",
+        #     message,"message\n",
+        # )
+        contact= models.Contact.objects.create(
+        name=name,email=email,message=message,message_type=messageType,phone=phone,
+        location=location
+        )
+
+        contact.save()
+        messages.success(request, 'Thank you for reach out.. our team will get back to you')
+
+
+
+
+
     return render(request,'contact.html',
     {
        "all_service" :models.ServiceModel.objects.all()
