@@ -1,0 +1,76 @@
+
+
+
+{% include 'base.html' %}
+{% load static %} 
+
+ 
+ {% block content %}
+
+
+
+
+ <div class="blog-details bg-default-6">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <div class="blog-title">
+            <h1 class="blog-title__heading">
+              {{  object.title }}
+            </h1>
+            <div class="blog__metainfo">
+              <!-- <a href="#" class="blog__metainfo__author-name">By David Jones</a> -->
+              <!-- <a href="#" class="blog__metainfo__date">Jan 14, 2021</a> -->
+            </div>
+          </div>
+          <div class="blog-content">
+            <!-- <div class="blog-content__img">
+              <img class="w-100" src="{{ object.cover_image.url}}" alt="">
+            </div> -->
+
+            
+      
+              
+            <p class="blog-content__text">
+              {{ object.main_content }}
+            </p>
+              
+
+
+
+          
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  <script>
+    let dbFormInfoBtn = document.querySelector("#dbFormInfoBtn")
+    let dbFormInfo = document.querySelector("#dbFormInfo")
+    dbFormInfoBtn.addEventListener("click",e=>{
+      
+      console.log("Click")
+      dbFormInfo.style.display='block'
+    })
+    
+    console.log("Click")
+</script>
+
+
+
+  {% include 'partials/footer.html' %}
+
+  {% endblock content %}
+    
+ 

@@ -1,0 +1,169 @@
+
+
+
+{% include 'base.html' %}
+{% load static %} 
+
+ 
+ {% block content %}
+
+
+
+
+ <div class="blog-details bg-default-6">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <div class="blog-title">
+            <h1 class="blog-title__heading">
+              {{  object.heading }}
+            </h1>
+            <div class="blog__metainfo">
+              <!-- <a href="#" class="blog__metainfo__author-name">By David Jones</a> -->
+              <!-- <a href="#" class="blog__metainfo__date">Jan 14, 2021</a> -->
+            </div>
+          </div>
+          <div class="blog-content">
+            <div class="blog-content__img">
+              <img class="w-100" src="{{ object.cover_image.url}}" alt="">
+            </div>
+
+            
+            {% for i  in object_para  %}
+              
+            <p class="blog-content__text">
+              {{ i.paragraph }}
+            </p>
+            {% endfor %}
+              
+
+
+
+            <button id="dbFormInfoBtn" class="btn btn-primary shadow--primary-4 btn--lg-2 rounded-55 text-white">
+              Download
+          </button>
+            <div class="comments-area  border-bottom border-default-4">
+                <div class="container">
+                  <div class="row">
+            
+            
+             <div class="col-xl-7 col-lg-7 mb-7 mb-lg-0">
+                <div class="comments-form" >
+                  
+                  <form action="{% url 'insightDetail' object.id  %}" 
+                  id="dbFormInfo" style="display: none;"
+                  method="post"
+                  class="contact-form" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300" data-aos-once="true">
+                  {% csrf_token %}
+                  <div class="section-title text-left mb-5 mb-md-7" data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
+                    <h2 class="section-title__heading">
+                     Download yout Pdf
+                    </h2>
+                  </div>
+                  <div class="row">
+                      <div class="col-lg-6 mb-4">
+                        <div class="form-floating">
+                          <input class="form-control" name="name"name placeholder="" id="floatinginput" required/>
+                          <label for="floatinginput">Your Name</label>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 mb-4">
+                        <div class="form-floating">
+                          <input class="form-control" name="email" placeholder="Leave a comment here" id="floatinginput2" />
+                          <label for="floatinginput2">Your Email</label>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 mb-4">
+                        <div class="form-floating">
+                          <input class="form-control" name="phone-number" placeholder="" id="floatinginput4" />
+                          <label for="floatinginput4">Phone Number</label>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-6 mb-4">
+                        <div class="form-floating">
+                          <input class="form-control" name="Location" placeholder="" id="floatinginput4" />
+                          <label for="floatinginput4">location</label>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-6 mb-4">
+                        <div class="form-floating">
+                          <input class="form-control" name="job-title" placeholder="" id="floatinginput4" />
+                          <label for="floatinginput4">Job title</label>
+                        </div>
+                      </div>
+
+
+                      <div class="col-lg-6 mb-4">
+                        <div class="form-floating">
+                          <input class="form-control" name="company" placeholder="" id="floatinginput4" />
+                          <label for="floatinginput4">Company</label>
+                        </div>
+                      </div>
+
+
+                      
+                      <!-- company -->
+                      
+                      <!-- <div class="col-lg-12">
+                        <div class="form-check d-flex align-items-center">
+                          <input class="form-check-input bg-white float-none mt-0" type="checkbox" value="" id="flexCheckDefault">
+                          
+                        </div> -->
+
+
+                        <div class="col-lg-12">
+                            <div class="form-floating">
+                              <textarea class="form-control" name="message" placeholder="Leave a comment here" id="floatingTextarea3" style="height: 100px"></textarea>
+                              <label for="floatingTextarea3">Leave message </label>
+                            </div>
+                          </div>
+                        <input 
+                          type="submit"
+                          value="Submit"
+                        class="btn btn-primary shadow--primary-4 btn--lg-2 rounded-55 text-white">
+                            <!-- Download -->
+                        </input>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  <script>
+    let dbFormInfoBtn = document.querySelector("#dbFormInfoBtn")
+    let dbFormInfo = document.querySelector("#dbFormInfo")
+    dbFormInfoBtn.addEventListener("click",e=>{
+      
+      console.log("Click")
+      dbFormInfo.style.display='block'
+    })
+    
+    console.log("Click")
+</script>
+
+
+
+  {% include 'partials/footer.html' %}
+
+  {% endblock content %}
+    
+ 

@@ -1,0 +1,249 @@
+{% include 'base.html' %}
+{% load static %} 
+
+ 
+ {% block content %}
+   
+
+
+
+    <!-- Hero Area -->
+    <div class="welcome-area welcome-area--l5 dark-mode-texts position-relative" style="background-image: url({% static 'image/home-5/hero-l5-bg.jpg' %});">
+      <div class="container">
+        <div class="row align-items-center justify-content-center justify-content-md-start">
+          <!-- Welcome content Area -->
+          <div class="col-xxl-6 col-xl-7 col-lg-8 col-md-8 col-xs-11 order-2 order-lg-1">
+            <div class="welcome-content welcome-content--l3">
+              <!-- <h1 class="welcome-content--l3__sub-title text-gorse" data-aos="fade-up" data-aos-duration="500" data-aos-once="true">Try our 14 days free trial</h1> -->
+             
+              <h1 class="welcome-content--l3__title" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300" data-aos-once="true"> We Are Your Partners in building an excellent Business in the structure and performance  </h1>
+              <!-- <p class="welcome-content--l3__descriptions" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500" data-aos-once="true">When, while lovely valley teems with vapour around
+                meand <br class="d-none d-sm-block">
+                        meridian sun strikes the upper impenetroble.</p> -->
+              <!-- <div class="welcome-btn-group--l3">
+                <a class="me-3 text-white rounded-50 me-3 popup-btn" href="https://www.youtube.com/watch?v=LWZ7iytIA6k" data-aos="fade-up" data-aos-duration="500" data-aos-delay="700" data-aos-once="true">
+                  <span class="play-btn"><i class="fa fa-play"></i></span>
+                  <span class="btn-text">Watch 1 min video testimony from<br class="d-none d-xs-block"> our satisfied customers</span>
+                </a>
+              </div> -->
+            </div>
+          </div>
+          <!--/ .Welcome Content Area -->
+        </div>
+      </div>
+    </div>
+
+
+    <!--/ .Hero Area -->
+    <!-- Services Area -->
+    <div class="service-area service-area--l5 bg-default-3">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xl-4 col-lg-6 col-md-6 col-sm-9 col-xs-10 ">
+            <!-- Section Title -->
+            <div class="section-title section-title--l5">
+              <h6 class="section-title__sub-heading" data-aos="fade-up" data-aos-duration="500" data-aos-once="true">Our Services</h6>
+              <h2 class="section-title__heading" data-aos="fade-up" data-aos-duration="500" data-aos-once="true">Providing solutions of every kind</h2>
+              <p class="section-title__description" data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
+                To build operationally excellent businesses both in structure and in performance by the application of proven management principles, techniques, and technology
+              </p>
+            </div>
+            <!--/ .Section Title -->
+          </div>
+          <!-- Single Services -->
+          
+          {% for i  in 5_service %}
+          <div class="col-xl-4 col-md-6 col-xs-10" data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
+            <div class="card card--services-l5">
+              <div class="card--services-l5__icon " style="background-color: #b3976b;">
+                <i class="{{ i.icon_class }}"></i>
+              </div>
+              <h3 class="card--services-l5__heading">{{ i.title }}</h3>
+              <p class="card--services-l5__content">
+              {{ i.intro_content }}
+              </p>
+              <a class="btn-link " href="{% url 'solutionDetail' i.id %}">Learn More <i class="fa fa-angle-right"></i>
+              </a>
+            </div>
+          </div>
+          {% endfor %}
+            
+         
+          <!--/ .Single Services -->
+        </div>
+      </div>
+    </div>
+    <!--/ .Services Area -->
+    <!-- Feature Area -->
+    <!-- <div class="about-us-section about-us-section--l5 bg-default">
+      <div class="container">
+        about-us Content
+        <div class="row align-items-center justify-content-center">
+          <div class="col-xl-6 col-lg-6 col-md-8 col-xs-10" data-aos="fade-right" data-aos-duration="500" data-aos-once="true">
+            <div class="about-us__image">
+              <img class="w-100" src="image/home-5/about-us-l5-img.png" alt="" />
+              Video Button
+              <a class="video-btn btn-primary popup-btn sonar-emitter" href="https://www.youtube.com/watch?v=LWZ7iytIA6k"> <i class="fa fa-play"></i> </a>
+            </div>
+          </div>
+          <div class="col-xxl-5 offset-xxl-1 col-lg-6 col-md-8 col-xs-10" data-aos="fade-left" data-aos-duration="500" data-aos-once="true">
+            <div class="about-us-right mt-4 mt-lg-0">
+              <div class="section-title section-title--l5">
+                <h6 class="section-title__sub-heading text-primary">Watch video</h6>
+                <h2 class="section-title__heading mb-4">Consultation Trade<br class="d-none d-xs-block d-lg-none  d-xl-block"> Easier Than Ever
+                </h2>
+                <p class="section-title__description">Scale up and down easily as your business demands. And make use of
+                  business-grade consultation. Book flexibly by the day, week or longer and customise the layout to reflect
+                  your brand.</p>
+              </div>
+              <div class="content-btn-group mt-4">
+                <a class="btn btn--lg-3 btn-primary me-3 text-white shadow--primary-2 rounded-50 me-3 popup-btn mb-3" href="https://www.youtube.com/watch?v=LWZ7iytIA6k">Learn More</a>
+                <a class="btn btn--lg-3 btn-electric-violet-2 shadow--electric-violet-2-2 rounded-50 me-3 text-white mb-3" href="#">Get Started</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        / .about-us Content
+      </div>
+    </div> -->
+    <!--/ .Feature Area -->
+    <!-- Content One Area -->
+    <div class="content-section bg-default">
+      <div class="container">
+        <div class="content-section--l5-1 border-top border-default-2 ">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-lg-4 col-md-10 col-xs-11">
+              <!-- Section Title -->
+              <div class="section-title section-title--l5 mb-6 mb-md-0 text-center text-lg-start" data-aos="fade-right" data-aos-duration="500" data-aos-once="true">
+                <h6 class="section-title__sub-heading">About us</h6>
+                <h2 class="section-title__heading mx-md-4 mx-lg-0">
+                   
+                   Our stakeholders have
+                  <br class="d-none d-xxl-block"> 
+                  seen us emerge
+                  <br class="d-none d-xxl-block"> 
+                  as a pacesetter and industry leader
+                </h2>
+                <p class="section-title__description">
+                  in these major areas and this is evident in our array
+                  <br class="d-none d-xs-block d-md-none"> of works and the introduction of programs 
+                  <br class="d-none d-xs-block d-md-none">
+                  that help clients achieve successful customer outcomes..</p>
+                <a class="btn btn--lg-3 btn-primary text-white shadow--primary-2 rounded-50" href="{% url 'contact' %}">Learn More</a>
+              </div>
+              <!--/ .Section Title -->
+            </div>
+            <div class="col-xxl-5 col-lg-4 col-md-6 col-xs-9" data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
+              <div class="content-img text-center mb-6 mb-md-0">
+                <img class="w-100" src="{% static 'image/home-5/content-1-l5-img.png' %}" alt="">
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-xs-9 order-3" data-aos="fade-left" data-aos-duration="500" data-aos-once="true">
+              <div class="content-right">
+                <!-- Single Services -->
+                <div class="widgets widgets--content-1-l5">
+                  <h5 class="widgets__title"> Intensive Research and Development </h5>
+                  <p class="widgets__content">
+                    About 35,045 hours committed to research and development as well as clients' project execution across various sectors of the economy. 
+                  </p>
+                </div>
+                <!--/ .Single Services -->
+                <!-- Single Services -->
+                <div class="widgets widgets--content-1-l5">
+                  <h5 class="widgets__title"> Business Process & Performance Management </h5>
+                  <p class="widgets__content">
+                    Our primary functional practices are; Business Process & Performance Management
+                  </p>
+                </div>
+                <!--/ .Single Services -->
+                <!-- Single Services -->
+                <div class="widgets widgets--content-1-l5">
+                  <h5 class="widgets__title">Our Services</h5>
+                  <p class="widgets__content">
+                    We are an indigenous consulting firm operating within a global framework. Our practice span across the continent of Africa. 
+                  </p>
+                </div>
+                <!--/ .Single Services -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ .Content One Area -->
+
+
+
+    <div class="blog-area blog-area--reguler bg-default-6">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xl-7">
+            <div class="section-title section-title--innerpage text-center pb-7">
+              <!-- <h5 class="section-title__sub-heading text-electric-violet-2">Latest posts</h5> -->
+              <h2 class="section-title__heading">Insight and Research</h2>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="row justify-content-center">
+          <div class="col-xl-12 col-lg-10">
+            <div class="blogs-post blogs-post--big">
+              <img class="w-100" src="" alt="">
+              <div class="hover-content">
+                <div class="hover-content__top d-flex align-items-center dark-mode-texts">
+                  <a href="#" class="hover-content__badge badge bg-primary" style="background-color:#b3976b;">Read more</a>
+                  <a href="blog-details.html" class="hover-content__date">01 June, 2020</a>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div> -->
+        <div class="row justify-content-center">
+
+          
+   
+          {% for i in  all_researchInfor %}
+          <div class="col-xl-4 col-lg-9 col-md-7 col-xs-10">
+            <div class="blogs-post blogs-post--small">
+              <img class="w-100" src="{{ i.cover_image.url }}" alt="">
+              <div class="hover-content">
+                <div class="hover-content__top d-flex align-items-center dark-mode-texts">
+                  <a href="{% url 'insightDetail' i.id %}" class="hover-content__badge badge " style="background-color: #b3976b;">Read more</a>
+                  <!-- <a href="" class="hover-content__date">01 June, 2020</a> -->
+                </div>
+                <a href="{% url 'insightDetail' i.id %}" class="hover-content__title">We can blend colors multiple ways, the most common</a>
+                
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          
+        </div>
+        <!-- <div class="row justify-content-center mt-7">
+          <div class="col-xl-4">
+            <div class="pagination">
+              <ul class="list-unstyled text-center mx-auto">
+                <li>
+                  <a href="#"><i class="fa fa-chevron-left"></i></a>
+                  <a href="#">1</a>
+                  <a href="#">2</a>
+                  <a href="#">3</a>
+                  <a href="#">...</a>
+                  <a href="#">5</a>
+                  <a href="#">6</a>
+                  <a href="#"><i class="fa fa-chevron-right"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+
+
+    {% include 'partials/footer.html' %}
+
+ {% endblock content %}
+   
+
+ 

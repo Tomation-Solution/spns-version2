@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>
+      SPNS
+  </title>
+  <link rel="shortcut icon" href="image/png/favicon.png" type="image/x-icon">
+  <!-- Bootstrap , fonts & icons  -->
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+  <link rel="stylesheet" href="{% static 'fonts/icon-font/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'fonts/typography-font/typo.css' %}">
+  <link rel="stylesheet" href="{% static 'fonts/fontawesome-5/css/all.css' %}">
+  <!-- Plugin'stylesheets  -->
+  <link rel="stylesheet" href="{% static 'plugins/aos/aos.min.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/fancybox/jquery.fancybox.min.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/nice-select/nice-select.min.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/slick/slick.min.css' %}">
+  <!-- Vendor stylesheets  -->
+  <link rel="stylesheet" href="{% static 'plugins/theme-mode-switcher/switcher-panel.css' %}">
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  <!-- Custom stylesheet -->
+
+
+  <style>
+    
+.messages{
+  background-color: #9ad1a7;
+  color: white;
+  position: fixed;
+  top: 30%;
+  padding: 1rem 1.4rem;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  max-width: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5% 50%;
+  border-radius: 20px;
+  cursor: pointer;
+}
+  </style>
+</head>
+
+<body data-theme-mode-panel-active data-theme="light">
+  <div class="site-wrapper overflow-hidden ">
+    <div id="loading">
+      <img src="{% static 'logo.svg' %}" alt="">
+    </div>
+
+
+    {% include 'partials/nav.html' %}
+  <!--/ .Header Area -->
+
+
+
+
+  {% if messages %}
+        <ul class="messages" id="messageModal">
+          <!-- <li>sdkoeo</li> -->
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+            <!-- dkijfirifirfnrnfn  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum quos nemo consectetur ipsa. Non autem incidunt dolores fugit iste. Ut consequatur numquam dolorum officiis non minima culpa eos asperiores aperiam. -->
+            {{ message }}</li>
+            {% endfor %}
+
+          <i class="fas fa-times" id="closeModal" ></i>
+
+        </ul>
+        {% endif %}
+        
+        {% block content %}
+            
+        {% endblock content %}
+            
+
+
+ 
+
+</div>
+
+<script>
+  const messageModal= document.querySelector('#messageModal');
+  const closeModal = document.querySelector('#closeModal')
+
+  closeModal.addEventListener('click',e=>{
+
+    messageModal.style.display='none'
+  })
+</script>
+
+<!-- Plugin's Scripts -->
+<script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'plugins/jquery/jquery-migrate.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+<script src="{% static 'plugins/fancybox/jquery.fancybox.min.js' %}"></script>
+<script src="{% static 'plugins/nice-select/jquery.nice-select.min.js' %}"></script>
+<script src="{% static 'plugins/aos/aos.min.js' %}"></script>
+<script src="{% static 'plugins/counter-up/jquery.counterup.min.js' %}"></script>
+<script src="{% static 'plugins/counter-up/waypoints.min.js' %}"></script>
+<script src="{% static 'plugins/slick/slick.min.js' %}"></script>
+<script src="{% static 'plugins/skill-bar/skill.bars.jquery.js' %}"></script>
+<script src="{% static 'plugins/isotope/isotope.pkgd.min.js' %}"></script>
+<!--<script src="./plugins/theme-mode-switcher/gr-theme-mode-switcher.js"></script>-->
+<!-- Activation Script -->
+<script src="{% static 'js/menu.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+</body>
+
+
+</html>

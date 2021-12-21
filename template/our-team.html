@@ -1,0 +1,94 @@
+
+
+{% include 'base.html' %}
+{% load static %} 
+
+ 
+ {% block content %}
+
+ <div class="page-title-content text-center bg-default-3"  >
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xl-7">
+          <h2 class="page-title-content__heading">OUR TEAM</h2>
+  
+          
+          <p class="page-title-content__text">
+            SPNS Consulting is made up of an intricate blend of professionals  
+              <br class="d-none d-md-block"> 
+              and consultants, who bring their years of experience and know-how to every project undertaken. </p>
+        </div>
+      </div>
+    </div>
+    <div class="shape">
+      <img class="w-100" src="{% static 'image/png/inner-banner-shape.png' %}" alt="">
+    </div>
+  </div>
+
+
+
+
+
+  <div class="blog-area blog-area--reguler bg-default-6" style="padding: 0;">
+    <div class="container">
+ 
+      <div class="row justify-content-center">
+        
+        <!-- <div class="col-xl-4 col-lg-9 col-md-7 col-xs-10">
+          <div class="blogs-post blogs-post--small">
+            <img class="w-100" src="{% static 'image/png/blog-post-4.png' %}" alt="">
+            <div class="hover-content">
+              <div class="hover-content__top d-flex align-items-center dark-mode-texts">
+                <a href="#" class="hover-content__badge badge" style="background-color:#b3976b;">CHIEF EXECUTIVE OFFICER</a>
+              </div>
+            <a href="#" class="hover-content__title">SHARON ONYENEKE</a>
+              
+            </div>
+          </div>
+        </div> -->
+
+
+
+
+        <div class="col-xl-4 col-lg-9 col-md-7 col-xs-10">
+            <div class="blogs-post blogs-post--small">
+              <img class="w-100" src="{% static 'db.jpeg' %}" alt="">
+              <div class="hover-content">
+                <div class="hover-content__top d-flex align-items-center dark-mode-texts">
+                  <a href="#" class="hover-content__badge badge" style="background-color:#b3976b;">CHIEF EXECUTIVE OFFICER</a>
+                  <!-- <a href="blog-details.html" class="hover-content__date">01 June, 2020</a> -->
+                </div>
+              <a href="#" class="hover-content__title">DEBO ADEBAYO</a>
+                
+              </div>
+            </div>
+          </div>
+
+
+
+        <div class="col-xl-4 col-lg-9 col-md-7 col-xs-10">
+            <div class="blogs-post blogs-post--small">
+              <img class="w-100" src="{% static 'emma.jpeg' %}" alt="">
+              <div class="hover-content">
+                <div class="hover-content__top d-flex align-items-center dark-mode-texts">
+                  <a href="#" class="hover-content__badge badge" style="background-color:#b3976b;">
+                      DIRECTOR,PROJECT MANAGEMENT OFFICE</a>
+                  <!-- <a href="blog-details.html" class="hover-content__date">01 June, 2020</a> -->
+                </div>
+              <a href="#" class="hover-content__title">EMMANUEL MOSES</a>
+                
+              </div>
+            </div>
+          </div>
+
+      </div>
+   
+    </div>
+  </div>
+  
+   {% include 'partials/footer.html' %}
+
+   {% endblock content %}
+     
+  
+   

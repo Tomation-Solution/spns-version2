@@ -1,0 +1,203 @@
+{% load static %}
+<!-- Header Area -->
+   <header class="site-header site-header--menu-right dynamic-sticky-bg dark-mode-texts mt-3 mt-lg-0 site-header--absolute site-header--sticky" 
+   style="background-color: rgba(255, 255, 255, 0.644);color:black">
+    <div class="container">
+      <nav class="navbar site-navbar">
+        <!-- Brand Logo-->
+        <div class="brand-logo" >
+          <a href="/" style="width: 100%;height:100%">
+            <!-- light version logo (logo must be black)-->
+            <img src="{% static 'logo.svg' %}" alt="" style="width:90px"class="light-version-logo">
+            <!-- Dark version logo (logo must be White)-->
+            <img src="{% static 'logo.svg' %}"  alt="" style="width:90px" class="dark-version-logo">
+          </a>
+        </div>
+        <div class="menu-block-wrapper  ms-4 dark-mode-texts">
+          <div class="menu-overlay"></div>
+          <nav class="menu-block" id="append-menu-header">
+            <div class="mobile-menu-head">
+              <div class="go-back">
+                <i class="fa fa-angle-left"></i>
+              </div>
+              <div class="current-menu-title"></div>
+              <div class="mobile-menu-close">&times;</div>
+            </div>
+            <ul class="site-menu-main">
+              <li class="nav-item ">
+                <a href="/" class="nav-link-item drop-trigger" style="color:#b3976b">Home
+                     <!-- <i class="fas fa-angle-down"></i> -->
+                </a>
+                <!-- <ul class="sub-menu" id="submenu-1">
+                  <li class="sub-menu--item">
+                    <a href="home-marketing.html">Marketing</a>
+                  </li>
+                  <li class="sub-menu--item">
+                    <a href="home-project-management.html">Project Management</a>
+                  </li>
+                  <li class="sub-menu--item">
+                    <a href="home-it-services.html">IT Services</a>
+                  </li>
+                  <li class="sub-menu--item">
+                    <a href="home-services.html">Services</a>
+                  </li>
+                  <li class="sub-menu--item">
+                    <a href="home-agency.html">Agency</a>
+                  </li>
+                  <li class="sub-menu--item">
+                    <a href="home-digital-agency.html">Digital Agency</a>
+                  </li>
+                  <li class="sub-menu--item">
+                    <a href="home-app.html">App Presenting</a>
+                  </li>
+                  <li class="sub-menu--item">
+                    <a href="home-startup.html">Startup</a>
+                  </li>
+                </ul> -->
+              </li>
+              <li class="nav-item nav-item-has-children">
+                <a href="#" class="nav-link-item drop-trigger" style="color:#b3976b">Insight and Research<i class="fas fa-angle-down"></i>
+                </a>
+                <ul class="sub-menu" id="submenu-2">
+                 
+                  
+                  
+                  {% for i  in all_researchInfor %}
+                    <li class="sub-menu--item">
+                      <a href="{% url 'insightDetail' i.id %}">{{ i.heading }}</a>
+                    </li>
+   
+                  {% endfor %}
+                    
+
+                </ul>
+              </li>
+
+              <li class="nav-item nav-item-has-children">
+                <a href="#" class="nav-link-item drop-trigger" style="color:#b3976b">Solutions<i class="fas fa-angle-down"></i>
+                </a>
+                <ul class="sub-menu" id="submenu-2">
+                 
+                  
+                  
+                  {% for i  in all_service %}
+                    <li class="sub-menu--item">
+                      <a href="{% url 'solutionDetail' i.id %}">{{ i.title }}</a>
+                    </li>
+   
+                  {% endfor %}
+                    
+
+                </ul>
+              </li>
+
+              
+              <li class="nav-item nav-item-has-children">
+                <a href="#" class="nav-link-item drop-trigger" style="color:#b3976b">About<i class="fas fa-angle-down"></i>
+                </a>
+                <ul class="sub-menu" id="submenu-2">
+                  <li class="sub-menu--item">
+                    <a href="{% url 'about' %}">About us</a>
+                  </li>
+
+                  <li class="sub-menu--item">
+                    <a href="{% url 'team' %}">Our Team</a>
+                  </li>
+
+                  
+
+
+                </ul>
+              </li>
+              <!-- <li class="nav-item nav-item-has-children">
+                <a href="#" class="nav-link-item drop-trigger">Portfolios <i class="fas fa-angle-down"></i>
+                </a>
+                <div class="sub-menu megamenu megadropdown-left menu-block-3  d-lg-flex" id="submenu-100">
+                 
+                    <ul class="sub-menu" id="submenu-10">
+                        <li class="sub-menu--item">
+                          <a href="#">solutions</a>
+                        </li>
+                      </ul>
+                    <ul class="col-lg-12 row-lg list-unstyled py-lg-2">
+                    <li class="col-lg-3">
+                      <div class="single-dropdown-block">
+                        <h3>Gallery Style</h3>
+                        <a href="portfolio-grid-2-container.html" class="mega-drop-menu-item sub-menu--item">Two Column Grid</a>
+                        <a href="portfolio-grid-3-container.html" class="mega-drop-menu-item sub-menu--item">Three Column Grid</a>
+                        <a href="portfolio-grid-4-container.html" class="mega-drop-menu-item sub-menu--item">Four Column Grid</a>
+                        <a href="portfolio-grid-2-container-fluid.html" class="mega-drop-menu-item sub-menu--item">Two Column Wide</a>
+                        <a href="portfolio-grid-3-container-fluid.html" class="mega-drop-menu-item sub-menu--item">Three Column Wide</a>
+                        <a href="portfolio-grid-4-container-fluid.html" class="mega-drop-menu-item sub-menu--item">Four Column Wide</a>
+                      </div>
+                    </li>
+                    <li class="col-lg-3">
+                      <div class="single-dropdown-block">
+                        <h3>Gallery (No Gap)</h3>
+                        <a href="portfolio-grid-2-no-gap.html" class="mega-drop-menu-item sub-menu--item">Two Column Grid</a>
+                        <a href="portfolio-grid-3-no-gap.html" class="mega-drop-menu-item sub-menu--item">Three Column Grid</a>
+                        <a href="portfolio-grid-4-no-gap.html" class="mega-drop-menu-item sub-menu--item">Four Column Grid</a>
+                        <a href="portfolio-grid-2-no-gap-full.html" class="mega-drop-menu-item sub-menu--item">Two Column Wide</a>
+                        <a href="portfolio-grid-3-no-gap-full.html" class="mega-drop-menu-item sub-menu--item">Three Column Wide</a>
+                        <a href="portfolio-grid-4-no-gap-full.html" class="mega-drop-menu-item sub-menu--item">Four Column Wide</a>
+                      </div>
+                    </li>
+                    <li class="col-lg-3">
+                      <div class="single-dropdown-block">
+                        <h3>Masonry Style</h3>
+                        <a href="portfolio-masonary-2-no-gap.html" class="mega-drop-menu-item sub-menu--item">Two Column Masonary</a>
+                        <a href="portfolio-masonary-3-no-gap.html" class="mega-drop-menu-item sub-menu--item">Three Column Masonary</a>
+                        <a href="portfolio-masonary-4-no-gap.html" class="mega-drop-menu-item sub-menu--item">Four Column Masonary</a>
+                        <a href="portfolio-masonary-2-no-gap-full.html" class="mega-drop-menu-item sub-menu--item">Two Column Wide</a>
+                        <a href="portfolio-masonary-3-no-gap-full.html" class="mega-drop-menu-item sub-menu--item">Three Column Wide</a>
+                        <a href="portfolio-masonary-4-no-gap-full.html" class="mega-drop-menu-item sub-menu--item">Four Column Wide</a>
+                      </div>
+                    </li>
+                    <li class="col-lg-3">
+                      <div class="single-dropdown-block">
+                        <h3>Portfolio Details</h3>
+                        <a href="portfolio-details-1.html" class="mega-drop-menu-item sub-menu--item">Portfolio Details 1</a>
+                        <a href="portfolio-details-2.html" class="mega-drop-menu-item sub-menu--item">Portfolio Details 2</a>
+                        <a href="portfolio-details-3.html" class="mega-drop-menu-item sub-menu--item">Portfolio Details 3</a>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li> -->
+              <!-- <li class="nav-item nav-item-has-children">
+                <a href="#" class="nav-link-item drop-trigger">Blogs
+                </a>
+                <ul class="sub-menu" id="submenu-10">
+                  <li class="sub-menu--item">
+                    <a href="blogs.html">Blog Reguler</a>
+                  </li>
+                  <li class="sub-menu--item">
+                    <a href="blog-left-sidebar.html">Blog Left Sidebar</a>
+                  </li>
+                  <li class="sub-menu--item">
+                    <a href="blog-right-sidebar.html">Blog Right Sidebar</a>
+                  </li>
+                </ul>
+              </li> -->
+              <li class="nav-item nav-item-has-children">
+                <a href="{% url 'contact' %}" class="nav-link-item drop-trigger" style="color:#b3976b">Contact
+                </a>
+              
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <!-- <div class="header-btn ">
+          <a class="btn btn btn-electric-violet-2 text-white rounded-50 ms-lg-2 shadow--electric-violet-2-4 ms-auto d-none d-sm-flex" href="#">
+            Purchase
+          </a>
+        </div> -->
+        <!-- mobile menu trigger -->
+        <div class="mobile-menu-trigger">
+          <span></span>
+        </div>
+        <!--/.Mobile Menu Hamburger Ends-->
+      </nav>
+    </div>
+  </header>
+  <!-- navbar- -->
