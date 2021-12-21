@@ -1,1 +1,1 @@
-web: gunicorn Spns.wsgi
+web: gunicorn core.wsgi
