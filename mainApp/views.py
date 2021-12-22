@@ -14,10 +14,12 @@ def indexPage(request):
     {
         "all_service":services,
         "5_service":services[0:5],
+        "all_researchInfor3":models.ResearchInsightInfo.objects.all()[0:3],
         "all_researchInfor":models.ResearchInsightInfo.objects.all()
 
     }
     )
+
 
 
 
@@ -38,7 +40,8 @@ def team(request):
 def insightList(request):
     return render(request,'insight-list.html',
     {
-       "all_service" :models.ServiceModel.objects.all()
+       "all_service" :models.ServiceModel.objects.all(),
+        "all_researchInfor":models.ResearchInsightInfo.objects.all()
     })
 
 

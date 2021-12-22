@@ -35,19 +35,29 @@
  
       <div class="row justify-content-center">
         
-        <div class="col-xl-4 col-lg-9 col-md-7 col-xs-10">
-          <div class="blogs-post blogs-post--small">
-            <img class="w-100" src="{% static 'image/png/blog-post-4.png' %}" alt="">
-            <div class="hover-content">
-              <div class="hover-content__top d-flex align-items-center dark-mode-texts">
-                <a href="#" class="hover-content__badge badge" style="background-color:#b3976b;">DOWLOAD</a>
-                <!-- <a href="blog-details.html" class="hover-content__date">01 June, 2020</a> -->
+      
+
+        
+        {% for i  in  all_researchInfor %}
+          <div class="col-xl-4 col-lg-9 col-md-7 col-xs-10">
+            <div class="blogs-post blogs-post--small">
+              <img class="w-100" src="{{ i.cover_image.url }}" alt="" style="min-height:243px;">
+              <div class="hover-content">
+                <div class="hover-content__top d-flex align-items-center dark-mode-texts">
+                  <a href="{% url 'insightDetail' i.id %}" class="hover-content__badge badge" style="background-color:#000066;">
+                    Read More
+                  </a>
+                  <!-- <a href="blog-details.html" class="hover-content__date">01 June, 2020</a> -->
+                </div>
+              <a href="{% url 'insightDetail' i.id %}" class="hover-content__title">
+                {{ i.heading }}
+              </a>
+                
               </div>
-            <a href="#" class="hover-content__title">SHARON ONYENEKE</a>
-              
             </div>
           </div>
-        </div>
+        {% endfor %}
+          
 
     
 
