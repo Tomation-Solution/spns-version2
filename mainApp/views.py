@@ -25,7 +25,12 @@ def indexPage(request):
 
 def about(request):
     return render(request,'about.html',{
-       "all_service" :models.ServiceModel.objects.all()
+       "all_service" :models.ServiceModel.objects.all(),
+
+ 
+        "all_researchInfor3":models.ResearchInsightInfo.objects.all()[0:3],
+        "all_researchInfor":models.ResearchInsightInfo.objects.all()
+
     })
 
 
@@ -33,7 +38,10 @@ def about(request):
 def team(request):
     return render(request,"our-team.html",
     {
-       "all_service" :models.ServiceModel.objects.all()
+       "all_service" :models.ServiceModel.objects.all(),
+          "all_researchInfor3":models.ResearchInsightInfo.objects.all()[0:3],
+        "all_researchInfor":models.ResearchInsightInfo.objects.all()
+
     })
 
 
@@ -41,7 +49,8 @@ def insightList(request):
     return render(request,'insight-list.html',
     {
        "all_service" :models.ServiceModel.objects.all(),
-        "all_researchInfor":models.ResearchInsightInfo.objects.all()
+        "all_researchInfor":models.ResearchInsightInfo.objects.all(),
+
     })
 
 
@@ -94,7 +103,10 @@ def insightDetail(request,pk=None):
     return render(request,'insightDetail.html',{
                 'object':reseacrhInsight,
         "object_para":models.ResearchInsightInfo.objects.get(id=pk).researchinsight_paragraph_set.all(),
-       "all_service" :models.ServiceModel.objects.all()
+       "all_service" :models.ServiceModel.objects.all(),
+
+   "all_researchInfor3":models.ResearchInsightInfo.objects.all()[0:3],
+        "all_researchInfor":models.ResearchInsightInfo.objects.all()
 
     })
 
@@ -102,13 +114,20 @@ def solutionDetail(request,pk=None):
     return render(request,'solutionDetail.html',
     {
        "all_service" :models.ServiceModel.objects.all(),
-       "object":models.ServiceModel.objects.get(id=pk)
+       "object":models.ServiceModel.objects.get(id=pk),
+          "all_researchInfor3":models.ResearchInsightInfo.objects.all()[0:3],
+        "all_researchInfor":models.ResearchInsightInfo.objects.all()
+
     })
 
 def solutionList(request):
     return render(request,'solutionList.html',
     {
-       "all_service" :models.ServiceModel.objects.all()
+       "all_service" :models.ServiceModel.objects.all(),
+          "all_researchInfor3":models.ResearchInsightInfo.objects.all()[0:3],
+        "all_researchInfor":models.ResearchInsightInfo.objects.all()
+
+
     })
 
 
@@ -151,6 +170,9 @@ def contact(request,pk=None):
 
     return render(request,'contact.html',
     {
-       "all_service" :models.ServiceModel.objects.all()
+       "all_service" :models.ServiceModel.objects.all(),
+          "all_researchInfor3":models.ResearchInsightInfo.objects.all()[0:3],
+        "all_researchInfor":models.ResearchInsightInfo.objects.all()
+
     })
 
