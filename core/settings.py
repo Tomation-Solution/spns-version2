@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
       "mainApp",
+    'cloudinary',
 
 ]
 
@@ -146,16 +147,23 @@ STATIC_ROOT =  os.path.join(BASE_DIR, 'staticfiles')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-"Start of Aws S3 bucket settings "
-AWS_ACCESS_KEY_ID = os.environ['aws_access_key_id']
-AWS_SECRET_ACCESS_KEY = os.environ['aws_secret_access_key']
-AWS_STORAGE_BUCKET_NAME = 'emetricslearning'
-AWS_S3_SIGNATURE_VERSION = 's3v4'
-AWS_S3_REGION_NAME = 'us-east-2'
-AWS_S3_FILE_OVERWRITE = False
-AWS_DEFAULT_ACL = None
-AWS_S3_VERIFY = True
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage' 
+# "Start of Aws S3 bucket settings "
+# AWS_ACCESS_KEY_ID = os.environ['aws_access_key_id']
+# AWS_SECRET_ACCESS_KEY = os.environ['aws_secret_access_key']
+# AWS_STORAGE_BUCKET_NAME = 'emetricslearning'
+# AWS_S3_SIGNATURE_VERSION = 's3v4'
+# AWS_S3_REGION_NAME = 'us-east-2'
+# AWS_S3_FILE_OVERWRITE = False
+# AWS_DEFAULT_ACL = None
+# AWS_S3_VERIFY = True
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage' 
+
+
+# cloudinary settings
+"usiing cloudinary for storage"
+CLOUDINARY_URL = os.environ["CLOUDINARY_URL"]
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
+
 
 
 django_heroku.settings(config=locals(), staticfiles=os.environ['debug']=='True',logging=False)
